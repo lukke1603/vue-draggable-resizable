@@ -229,6 +229,10 @@ export default {
     onResize: {
       type: Function,
       default: () => true
+    },
+    rotation: {
+      type: Number,
+      default: () => 0
     }
   },
 
@@ -780,7 +784,7 @@ export default {
   computed: {
     style () {
       return {
-        transform: `translate(${this.left}px, ${this.top}px)`,
+        transform: `translate(${this.left}px, ${this.top}px) rotate(${this.rotation}deg)`,
         width: this.computedWidth,
         height: this.computedHeight,
         zIndex: this.zIndex,
